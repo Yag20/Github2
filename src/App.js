@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Header, Footer } from './layout';
 import { Repositories } from "./components";
 import './style.css'
 
@@ -19,7 +18,6 @@ export const App = () => {
 
     return (
         <>
-            <Header />
             <form onSubmit={handleFormSubmit} id="searchForm">
                 <input
                     type="text" name="username" id="username"
@@ -28,7 +26,6 @@ export const App = () => {
                 <button type="submit" id="submitButton">Search</button>
             </form>
             {isSubmitted && <Repositories username={username} />}
-            <Footer />
         </>
     )
 }
