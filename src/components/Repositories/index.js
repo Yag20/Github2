@@ -7,20 +7,17 @@ export const Repositories = ({ username }) => {
     const [repoData, setRepoData] = useState([]);
 
     useEffect(() => {
-        let cancelRequest = false;
+      
         const getRepos = async () => {
-            const options = {
-                headers: {
-                    Accept: "application/vnd.github.v3+json"
-                }
-            }
-            const { data } = await axios.get(`https://api.github.com/users/${username}/repos`, options);            if (cancelRequest) return;
+            
+            const { data } = await axios.get(`https://api.github.com/users/${username}/repos`);            
+           
             setRepoData(data);
         }
 
         getRepos();
 
-        return () => cancelRequest = true;
+     
     }, [username])
 
     const renderRepo = () => repoData.map((r, i) => <Repository key={i} data={r} />)
