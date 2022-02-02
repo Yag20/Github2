@@ -3,7 +3,7 @@ import { faFileCode, faEye, faDotCircle, faStar } from '@fortawesome/free-regula
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { Commits } from '..';
-import './style.css';
+
 
 export const Repository = ({ data }) => {
     const [isExpanded, setIsExpanded] = useState(false);

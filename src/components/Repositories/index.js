@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
 import { Repository } from '..';
-import './style.css'
+
 
 export const Repositories = ({ username }) => {
     const [repoData, setRepoData] = useState([]);
