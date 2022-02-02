@@ -5,7 +5,7 @@ import './style.css'
 export const App = () => {
     const [formData, setFormData] = useState("");
     const [username, setUsername] = useState("");
-    const [isSubmitted, setIsSubmitted] = useState(false);
+    
 
     const handleInput = e => {
         setFormData(e.target.value)
@@ -13,7 +13,7 @@ export const App = () => {
     const handleFormSubmit = e => {
         e.preventDefault();
         setUsername(formData);
-        setIsSubmitted(true);
+     
     }
 
     return (
@@ -25,7 +25,7 @@ export const App = () => {
                     placeholder="Search for a username" />
                 <button type="submit" id="submitButton">Search</button>
             </form>
-            {isSubmitted && <Repositories username={username} />}
+             <Repositories username={username} />
         </>
     )
 }
