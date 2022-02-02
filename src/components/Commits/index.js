@@ -6,14 +6,9 @@ export const Commits = ({ url }) => {
 
     useEffect(async () => {
 
-        const options = {
-            headers: {
-                Accept: "application/vnd.github.v3+json"
-            }
-        }
-        const { data } = await axios.get(url.replace(/{\/sha}$/, ''), options);
-        // Mock dataset
-        // const data = [{}, {}, {}];
+       
+        const { data } = await axios.get(url.replace(/{\/sha}$/, ''));
+       
         setCommits(data.length);
     }, [url])
 
