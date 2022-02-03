@@ -11,7 +11,7 @@ export const Repository = ({ data }) => {
   
 
     const toggleExpand = () => setIsExpanded(prevState => !prevState)
-
+    //the onclick dont work sometime you have to a call back to stop it from being called instantly "()=>onClick"
     return (
         <div className={`repo-container${isExpanded ? ' expanded' : ''}`}>
             <h1 onClick={toggleExpand}>{name}</h1>
